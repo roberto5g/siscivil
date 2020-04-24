@@ -1,5 +1,3 @@
+# SIR
+Sistema de Informações da Reserva
 
-
-## SisCvil
-
-Sistema para controler de efetivo civil dentro do Exército.
