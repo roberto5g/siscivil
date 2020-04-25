@@ -16,6 +16,7 @@
             <div class="formulario">
                 <form id="form_cadastrar_levantamento" method="POST">
                     <input type="hidden" id="status" value="{{$status}}">
+                    <input type="hidden" name="periodo" value="{{$periodo}}">
                     <div class="alert alert-simples">
 
                         <div class="row">

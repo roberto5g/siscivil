@@ -15,23 +15,9 @@ class LevantamentoController extends Controller
     public function cadastra(Request $request)
     {
 
-        $hoje = date('d/m/Y');
-        $date = date('Y-m-d');
 
-        $data1 = '2013-05-21';
-        $data2 = '2013-05-22';
 
-        $retorno = '';
-
-        if (strtotime($data1) > strtotime($data2)) {
-            $retorno = 'A data 1 é maior que a data 2.';
-        } elseif (strtotime($data1) == strtotime($data2)) {
-            $retorno = 'A data 1 é igual a data 2.';
-        } else {
-            $retorno = 'A data 1 é menor a data 2.';
-        }
-
-        /*$levantamento = Levantamento::create([
+        $levantamento = Levantamento::create([
             'confirmado' => $request['confirmado'],
             'responsaveis' => $request['responsaveis'],
             'idosos' => $request['idosos'],
@@ -41,8 +27,8 @@ class LevantamentoController extends Controller
             'nao_presentes' => $request['nao_presentes'],
             'user_id' => Auth::user()->id,
             'periodo_id' => 1,
-        ]);*/
-        return response()->json($date);
+        ]);
+        return response()->json($levantamento);
     }
 
 

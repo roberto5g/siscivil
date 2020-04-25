@@ -33,11 +33,16 @@ class HomeController extends Controller
         $periodo_atual = [];
 
         foreach ($periodos as $periodo){
-            if(strtotime($periodo->inicio) >= strtotime($date) || strtotime($periodo->fim) <= strtotime($date)){
+            if(strtotime($date) >= strtotime($periodo->inicio) &&  strtotime($date) <= strtotime($periodo->fim)){
                 $periodo_atual[] = $periodo->id;
             }
         }
+
+        //dd($periodo_atual);
+
         $levatamento = Levantamento::where('periodo_id',$periodo_atual[0])->where('user_id',auth()->user()->id)->get();
+
+        $periodo = $periodo_atual[0];
 
         $status = '';
         if(count($levatamento) > 0){
@@ -50,7 +55,7 @@ class HomeController extends Controller
             // vai pra tela de administração
             return view('admin.dashboard',compact('periodos'));
         } else {
-            return view('usuarios.dashboard',compact('periodo_atual','status'));
+            return view('usuarios.dashboard',compact('periodo','status'));
         }
 
 
