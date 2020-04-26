@@ -22,6 +22,11 @@
                             Usuário</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{route('periodo')}}"><i class="fa fa-clock-o"></i>
+                            Períodos</a>
+                    </li>
+
                 </ul>
 
             @endif

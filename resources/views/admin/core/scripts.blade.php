@@ -17,7 +17,8 @@
 <script src="{{ asset('js/vendor/moment.min.js') }}"></script>
 <script src="{{ asset('js/vendor/fullcalendar.min.js') }}"></script>
 <script src="{{ asset('js/vendor/pt-br.js') }}"></script>
-
+<script src="{{ asset('js/vendor/gijgo.min.js') }}"></script>
+<script src="{{ asset('js/vendor/pt-br.js') }}"></script>
 <script src="{{ asset('js/vendor/jquery.maskMoney.min.js') }}"></script>
 <!-- CoreUI main scripts -->
 <script src="{{ asset('js/app.js')}}"></script>

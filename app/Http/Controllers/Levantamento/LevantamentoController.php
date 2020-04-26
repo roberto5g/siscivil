@@ -26,9 +26,9 @@ class LevantamentoController extends Controller
             'idade_escolar' => $request['idade_escolar'],
             'nao_presentes' => $request['nao_presentes'],
             'user_id' => Auth::user()->id,
-            'periodo_id' => 1,
+            'periodo_id' => $request['periodo'],
         ]);
-        return response()->json($levantamento);
+        return back();
     }
 
 
@@ -53,5 +53,27 @@ class LevantamentoController extends Controller
         return response()->json($levantamento);
     }
 
+    public function getData()
+    {
+        $levantamentos = Levantamento::where('user_id',Auth::user()->id)->with('periodo')->get();
+
+        return datatables()->of($levantamentos)->addColumn('action', function ($query) {
+            return '<div class="text-center"> 
+                       
+                        <a href="#" class="link-simples " id="detalhes_'.$query->id.'" onclick="detalhes('.$query->id.')"  
+                            data-confirmado="' . $query->confirmado . '" 
+                            data-responsaveis="' . $query->responsaveis . '" 
+                            data-idosos="' . $query->idosos . '" 
+                            data-imunodeficiente="' . $query->imunodeficiente . '" 
+                            data-gestantes="' . $query->gestantes . '" 
+                            data-idade_escolar="' . $query->idade_escolar . '" 
+                            data-nao_presentes="' . $query->nao_presentes . '" 
+                            data-toggle="modal">
+                            <i class="fa fa-search separaicon " data-toggle="tooltip" data-placement="top" title="Detalhes"></i>
+                        </a>
+             
+                    </div>';
+        })->make(true);
+    }
 
 }

@@ -396,7 +396,7 @@ function dataPtBr(data) {
 
 $('.datas').mask("99/99/9999");
 $('.altura').mask("9.99");
-$('.quantidade').mask("9");
+$('.quantidade').mask("99");
 $('.nota').mask("9.99");
 
 $(".valor").maskMoney({

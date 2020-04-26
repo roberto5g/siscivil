@@ -28,7 +28,7 @@ class OmController extends Controller
 
     public function edita($id)
     {
-        $om = Om::with('prm')->find($id);
+        $om = Om::find($id);
 
         return response()->json($om);
     }

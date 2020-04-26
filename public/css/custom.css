@@ -790,3 +790,8 @@ a.btn-card {
     color: #fff;
 }
 /* End card section */
+
+.alinha {
+    text-align: center !important;
+    vertical-align: middle!important;
+}

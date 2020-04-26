@@ -46,8 +46,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/gerencia/updatesenha/usuario/{id}', 'User\UserController@updateSenha');
     Route::post('/admin/gerencia/remove/usuario/{id}', 'User\UserController@remove');
 
+    //periodo
+    Route::get('/admin/gerencia/periodo', 'Periodo\PeriodoController@index')->name('periodo');
+    Route::post('/admin/gerencia/cadastro/periodo', 'Periodo\PeriodoController@cadastra');
+    Route::post('/admin/gerencia/edita/periodo/{id}', 'Periodo\PeriodoController@edita');
+    Route::get('/admin/gerencia/lista/periodo/getdata', 'Periodo\PeriodoController@getData');
+    Route::get('/admin/gerencia/lista/periodo/{id}', 'Periodo\PeriodoController@lista');
+
+
     //levamntamento
     Route::post('/usuario/cadastra/levantamento', 'Levantamento\LevantamentoController@cadastra');
+    Route::get('/usuario/lista/levantamento', 'Levantamento\LevantamentoController@getData');
 
 });
 // Section Pages
