@@ -34,6 +34,9 @@
                                         <input type="date" class="form-control " id="fim"
                                                aria-describedby="nomeHelp" name="fim"
                                                placeholder="Insira a data de fim" required>
+                                        <small class="form-text text-muted"> <i>A data de fim deve ser informada sempre adicionando um dia a mais.
+                                            Ex: se o período termina em 29/04/2020 uma quarta-feira você deverá informar a data com um dia a mais 30/04/2020 quinta-feira.
+                                            </i></small>
                                     </div>
                                 </div>
                             </div>

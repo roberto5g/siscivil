@@ -22,12 +22,14 @@
                     </div>
                 </div>
                 @if($proximo)
-                    <div class="row">
-                        <div class="col">
-                            <div class="text-left">
-                                <p>Você poderá enviar novamente as informações
-                                    de {{date('d/m/Y', strtotime($proximo->inicio))}}
-                                    a {{date('d/m/Y',strtotime("-1 day", strtotime($proximo->fim)))}}</p>
+                    <div class="alert alert-warning">
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-center">
+                                    <p><b>Você poderá enviar novamente as informações
+                                        de {{date('d/m/Y', strtotime($proximo->inicio))}}
+                                        a {{date('d/m/Y',strtotime("-1 day", strtotime($proximo->fim)))}}</b></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,7 +183,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="modal fade" id="ModalDetalhe" tabindex="-1" role="dialog"
          aria-labelledby="ModalDetaleTitle" aria-hidden="true">
