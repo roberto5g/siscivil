@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Om\Om;
 
 class CreateOmsTable extends Migration
 {
@@ -19,6 +20,11 @@ class CreateOmsTable extends Migration
             $table->string('sigla',30);
             $table->timestamps();
         });
+
+        return Om::create([
+            'nome' => 'Comando da 12ª Região Militar',
+            'sigla' => 'CMDO 12ªRM',
+        ]);
     }
 
     /**
