@@ -377,7 +377,7 @@
                                     <label for="confirmado">1 - Quantidade de servidores com confirmação de diagnóstico
                                         de
                                         infecção por COVID-19.</label>
-                                    <input type="text" class="form-control quantidade" id="confirmado_"
+                                    <input type="text" class="form-control quantidade" id="confirmado_detalhes"
                                            readonly>
                                 </div>
                             </div>
@@ -392,7 +392,7 @@
                                         ou
                                         mais pessoas com suspeita ou confirmação de diagnóstico de infecção por
                                         COVID-19.</label>
-                                    <input type="text" class="form-control quantidade" id="responsaveis_"
+                                    <input type="text" class="form-control quantidade" id="responsaveis_detalhes"
                                            readonly>
                                 </div>
                             </div>
@@ -404,7 +404,7 @@
 
                                     <label for="idosos">3 - Quantidade de servidores com 60 (sessenta) anos ou
                                         mais.</label>
-                                    <input type="text" class="form-control quantidade" id="idosos_" readonly>
+                                    <input type="text" class="form-control quantidade" id="idosos_detalhes" readonly>
                                 </div>
                             </div>
                         </div>
@@ -416,7 +416,7 @@
                                     <label for="imunodeficiente">4 - Quantidade de servidores imunodeficientes ou com
                                         doenças
                                         preexistentes crônicas ou graves.</label>
-                                    <input type="text" class="form-control quantidade" id="imunodeficiente_" readonly>
+                                    <input type="text" class="form-control quantidade" id="imunodeficiente_detalhes" readonly>
                                 </div>
                             </div>
                         </div>
@@ -426,7 +426,7 @@
                                 <div class="form-group">
 
                                     <label for="gestantes">5 - Quantidade de servidoras gestantes ou lactantes.</label>
-                                    <input type="text" class="form-control quantidade" id="gestantes_" readonly>
+                                    <input type="text" class="form-control quantidade" id="gestantes_detalhes" readonly>
                                 </div>
                             </div>
                         </div>
@@ -439,7 +439,7 @@
                                         ou
                                         inferiror
                                         e que necessitam de assistência.</label>
-                                    <input type="text" class="form-control quantidade" id="idade_escolar_" readonly>
+                                    <input type="text" class="form-control quantidade" id="idade_escolar_detalhes" readonly>
                                 </div>
                             </div>
                         </div>
@@ -454,7 +454,7 @@
                                         proteção para o enfrentamento da emergência de saúde pública decorrente do
                                         coronavírus
                                         (COVID-19).</label>
-                                    <input type="text" class="form-control quantidade" id="nao_presentes_" readonly>
+                                    <input type="text" class="form-control quantidade" id="nao_presentes_detalhes" readonly>
                                 </div>
                             </div>
                         </div>
@@ -618,14 +618,13 @@
 
         function detalhes(id) {
             $('#ModalDetalhe').modal('show');
-            $('#confirmado_').val($('#detalhes_' + id).data('confirmado'));
-            $('#responsaveis_').val($('#detalhes_' + id).data('responsaveis'));
-            $('#idosos_').val($('#detalhes_' + id).data('idosos'));
-            $('#imunodeficiente_').val($('#detalhes_' + id).data('imunodeficiente'));
-            $('#gestantes_').val($('#detalhes_' + id).data('gestantes'));
-            $('#idade_escolar_').val($('#detalhes_' + id).data('idade_escolar'));
-            $('#nao_presentes_').val($('#detalhes_' + id).data('nao_presentes'));
-
+            $('#confirmado_detalhes').val($('#detalhes_' + id).data('confirmado'));
+            $('#responsaveis_detalhes').val($('#detalhes_' + id).data('responsaveis'));
+            $('#idosos_detalhes').val($('#detalhes_' + id).data('idosos'));
+            $('#imunodeficiente_detalhes').val($('#detalhes_' + id).data('imunodeficiente'));
+            $('#gestantes_detalhes').val($('#detalhes_' + id).data('gestantes'));
+            $('#idade_escolar_detalhes').val($('#detalhes_' + id).data('idade_escolar'));
+            $('#nao_presentes_detalhes').val($('#detalhes_' + id).data('nao_presentes'));
         }
 
         $('#levamtamento_table').DataTable({
