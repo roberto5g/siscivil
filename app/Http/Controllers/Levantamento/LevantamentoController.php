@@ -55,9 +55,16 @@ class LevantamentoController extends Controller
 
     public function getData()
     {
+        $retorno = [];
         $levantamentos = Levantamento::where('user_id',Auth::user()->id)->with('periodo')->get();
 
-        return datatables()->of($levantamentos)->addColumn('action', function ($query) {
+        foreach ($levantamentos as $levantamento){
+            $levantamento->periodo->fim = date('Y-m-d',strtotime("-1 day", strtotime($levantamento->periodo->fim)));
+            $retorno[] = $levantamento;
+        }
+
+
+        return datatables()->of($retorno)->addColumn('action', function ($query) {
             return '<div class="text-center"> 
                        
                         <a href="#" class="link-simples " id="detalhes_'.$query->id.'" onclick="detalhes('.$query->id.')"  
